@@ -25,15 +25,66 @@ class MyApp extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(),
             body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  RangeDatePicker(
-                    centerLeadingDate: true,
-                    minDate: DateTime(2020, 10, 10),
-                    maxDate: DateTime(2024, 10, 30),
-                  ),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        showDatePickerDialog(
+                          backgroundColor: Colors.white,
+                          selectedCellDecoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+                          currentDateDecoration: const BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
+                          // disabledCellsDecoration:
+                          //     const BoxDecoration(color: Colors.deepPurpleAccent, shape: BoxShape.circle),
+                          // enabledCellsDecoration: const BoxDecoration(color: Colors.blueAccent, shape: BoxShape.circle),
+                          enabledCellsTextStyle: TextStyle(),
+                          disabledCellsTextStyle: TextStyle(),
+                          splashColor: Colors.transparent,
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          context: context,
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                          minDate: DateTime(2020, 10, 10),
+                          maxDate: DateTime(2024, 10, 30),
+                          centerLeadingDate: true,
+                        );
+                      },
+                      child: const Text('Dialog'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        showRangePickerDialog(
+                          backgroundColor: Colors.white,
+                          selectedCellsDecoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+                          currentDateDecoration: const BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
+                          // disabledCellsDecoration:
+                          //     const BoxDecoration(color: Colors.deepPurpleAccent, shape: BoxShape.circle),
+                          // enabledCellsDecoration: const BoxDecoration(color: Colors.blueAccent, shape: BoxShape.circle),
+                          enabledCellsTextStyle: TextStyle(),
+                          disabledCellsTextStyle: TextStyle(),
+                          splashColor: Colors.transparent,
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          context: context,
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                          minDate: DateTime(2020, 10, 10),
+                          maxDate: DateTime(2024, 10, 30),
+                          centerLeadingDate: true,
+                        );
+                      },
+                      child: const Text('Rang Dialog'),
+                    ),
+                    RangeDatePicker(
+                      centerLeadingDate: true,
+                      minDate: DateTime(2020, 10, 10),
+                      maxDate: DateTime(2024, 10, 30),
+                    ),
+                    DatePicker(
+                      centerLeadingDate: true,
+                      minDate: DateTime(2020, 10, 10),
+                      maxDate: DateTime(2024, 10, 30),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

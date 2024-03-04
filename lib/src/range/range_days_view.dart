@@ -1,5 +1,6 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:date_picker_plus/src/shared/string_ext.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart' as intl;
@@ -54,7 +55,8 @@ class RangeDaysView extends StatelessWidget {
         selectedStartDate!.day,
       );
 
-      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) && (selected.isBefore(max) || selected.isAtSameMomentAs(max));
+      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) &&
+          (selected.isBefore(max) || selected.isAtSameMomentAs(max));
     }(), "selected start date should be in the range of min date & max date");
     assert(() {
       if (selectedEndDate == null) return true;
@@ -65,7 +67,8 @@ class RangeDaysView extends StatelessWidget {
         selectedEndDate!.month,
         selectedEndDate!.day,
       );
-      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) && (selected.isBefore(max) || selected.isAtSameMomentAs(max));
+      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) &&
+          (selected.isBefore(max) || selected.isAtSameMomentAs(max));
     }(), "selected end date should be in the range of min date & max date");
   }
 
@@ -189,7 +192,7 @@ class RangeDaysView extends StatelessWidget {
         ExcludeSemantics(
           child: Center(
             child: Text(
-              weekday.toUpperCase(),
+              weekday.toCamelcase(),
               style: daysOfTheWeekTextStyle,
             ),
           ),
@@ -237,15 +240,20 @@ class RangeDaysView extends StatelessWidget {
 
         final isRangeSelected = selectedStartDateOnly != null && selectedEndDateOnly != null;
 
-        final isStartSelectedOnly = selectedStartDateOnly != null && dayToBuild == selectedStartDateOnly && selectedEndDateOnly == null;
+        final isStartSelectedOnly =
+            selectedStartDateOnly != null && dayToBuild == selectedStartDateOnly && selectedEndDateOnly == null;
 
-        final isEndSelectedOnly = selectedStartDateOnly == null && selectedEndDateOnly != null && dayToBuild == selectedEndDateOnly;
+        final isEndSelectedOnly =
+            selectedStartDateOnly == null && selectedEndDateOnly != null && dayToBuild == selectedEndDateOnly;
 
         final isRangeOnlyOneDate = selectedStartDateOnly == selectedEndDateOnly && dayToBuild == selectedStartDateOnly;
 
         final isSingleCellSelected = isStartSelectedOnly || isEndSelectedOnly || isRangeOnlyOneDate;
 
-        final bool isWithinRange = isRangeSelected && dayToBuild.isAfter(selectedStartDateOnly) && dayToBuild.isBefore(selectedEndDateOnly) && !isRangeOnlyOneDate;
+        final bool isWithinRange = isRangeSelected &&
+            dayToBuild.isAfter(selectedStartDateOnly) &&
+            dayToBuild.isBefore(selectedEndDateOnly) &&
+            !isRangeOnlyOneDate;
 
         final isStartDate = DateUtils.isSameDay(selectedStartDateOnly, dayToBuild);
 
@@ -323,7 +331,8 @@ class RangeDaysView extends StatelessWidget {
         } else {
           dayWidget = InkResponse(
             onTap: () {
-              final isStart = (selectedEndDate == null && selectedStartDate == null) || (selectedEndDate != null && selectedStartDate != null);
+              final isStart = (selectedEndDate == null && selectedStartDate == null) ||
+                  (selectedEndDate != null && selectedStartDate != null);
 
               if (isStart) {
                 onStartDateChanged(dayToBuild);

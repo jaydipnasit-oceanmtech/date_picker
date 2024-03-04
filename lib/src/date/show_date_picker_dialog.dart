@@ -66,6 +66,12 @@ Future<DateTime?> showDatePickerDialog({
   Color? splashColor,
   double? splashRadius,
   bool centerLeadingDate = false,
+  Color? backgroundColor,
+  double? elevation,
+  Color? shadowColor,
+  Color? surfaceTintColor,
+  ShapeBorder? shape,
+  AlignmentGeometry? alignment,
 }) async {
   return showDialog<DateTime>(
     context: context,
@@ -81,6 +87,12 @@ Future<DateTime?> showDatePickerDialog({
         padding: padding,
         child: Dialog(
           insetPadding: EdgeInsets.zero,
+          backgroundColor: backgroundColor,
+          elevation: elevation,
+          shadowColor: shadowColor,
+          surfaceTintColor: surfaceTintColor,
+          shape: shape,
+          alignment: alignment,
           child: DatePicker(
             centerLeadingDate: centerLeadingDate,
             initialDate: initialDate,

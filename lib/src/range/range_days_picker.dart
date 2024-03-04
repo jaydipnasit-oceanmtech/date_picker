@@ -348,7 +348,8 @@ class __RangeDaysPickerState extends State<RangeDaysPicker> {
 
     //
     //! splash
-    final splashColor = widget.splashColor ?? selectedCellsDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
+    final splashColor =
+        widget.splashColor ?? selectedCellsDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
 
     final highlightColor = widget.highlightColor ?? Theme.of(context).highlightColor;
     //
@@ -415,7 +416,8 @@ class __RangeDaysPickerState extends State<RangeDaysPicker> {
                 maxDate: DateUtils.dateOnly(widget.maxDate),
                 displayedMonth: month,
                 selectedEndDate: widget.selectedEndDate == null ? null : DateUtils.dateOnly(widget.selectedEndDate!),
-                selectedStartDate: widget.selectedStartDate == null ? null : DateUtils.dateOnly(widget.selectedStartDate!),
+                selectedStartDate:
+                    widget.selectedStartDate == null ? null : DateUtils.dateOnly(widget.selectedStartDate!),
                 daysOfTheWeekTextStyle: daysOfTheWeekTextStyle,
                 enabledCellsTextStyle: enabledCellsTextStyle,
                 enabledCellsDecoration: enabledCellsDecoration,

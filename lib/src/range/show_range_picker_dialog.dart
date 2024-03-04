@@ -67,6 +67,12 @@ Future<DateTimeRange?> showRangePickerDialog({
   Color? splashColor,
   double? splashRadius,
   bool centerLeadingDate = false,
+  Color? backgroundColor,
+  double? elevation,
+  Color? shadowColor,
+  Color? surfaceTintColor,
+  ShapeBorder? shape,
+  AlignmentGeometry? alignment,
 }) async {
   return showDialog<DateTimeRange>(
     context: context,
@@ -82,6 +88,12 @@ Future<DateTimeRange?> showRangePickerDialog({
         padding: padding,
         child: Dialog(
           insetPadding: EdgeInsets.zero,
+          backgroundColor: backgroundColor,
+          elevation: elevation,
+          shadowColor: shadowColor,
+          surfaceTintColor: surfaceTintColor,
+          shape: shape,
+          alignment: alignment,
           child: RangeDatePicker(
             centerLeadingDate: centerLeadingDate,
             currentDate: currentDate,

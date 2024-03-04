@@ -1,5 +1,6 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:date_picker_plus/src/shared/string_ext.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart' as intl;
@@ -49,7 +50,8 @@ class DaysView extends StatelessWidget {
         selectedDate!.month,
         selectedDate!.day,
       );
-      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) && (selected.isBefore(max) || selected.isAtSameMomentAs(max));
+      return (selected.isAfter(min) || selected.isAtSameMomentAs(min)) &&
+          (selected.isBefore(max) || selected.isAtSameMomentAs(max));
     }(), "selected date should be in the range of min date & max date");
   }
 
@@ -156,7 +158,7 @@ class DaysView extends StatelessWidget {
         ExcludeSemantics(
           child: Center(
             child: Text(
-              weekday.toUpperCase(),
+              weekday.toCamelcase(),
               style: daysOfTheWeekTextStyle,
             ),
           ),

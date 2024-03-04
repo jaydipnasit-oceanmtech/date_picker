@@ -209,7 +209,7 @@ class __RangeDaysPickerState extends State<RangeDaysPicker> {
   // In scenarios where a month starts on the last day of a week,
   // it may extend into the first day of the sixth week to
   // accommodate the full month.
-  double maxHeight = 52 * 7;
+  double maxHeight = 42 * 7;
 
   @override
   void initState() {

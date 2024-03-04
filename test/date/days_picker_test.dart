@@ -444,7 +444,7 @@ void main() {
     );
 
     testWidgets(
-      'Should the height of the SizedBox be 52 * 7',
+      'Should the height of the SizedBox be 42 * 7',
       (WidgetTester tester) async {
         final DateTime initialDate = DateTime(2023, 7);
         final DateTime minDate = DateTime(2000);
@@ -479,10 +479,10 @@ void main() {
 
         await tester.pumpAndSettle();
 
-        final Finder sizedBoxFinder = find.byKey(const ValueKey<double>(52 * 7));
+        final Finder sizedBoxFinder = find.byKey(const ValueKey<double>(42 * 7));
         expect(sizedBoxFinder, findsOneWidget);
 
-        const height = 52 * 7;
+        const height = 42 * 7;
 
         final SizedBox sizedBoxWidget = tester.widget<SizedBox>(sizedBoxFinder);
 

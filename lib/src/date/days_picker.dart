@@ -66,17 +66,17 @@ class DaysPicker extends StatefulWidget {
     this.centerLeadingDate = false,
   }) {
     assert(!minDate.isAfter(maxDate), "minDate can't be after maxDate");
-    assert(
-      () {
-        if (initialDate == null) return true;
-        final init = DateTime(initialDate!.year, initialDate!.month, initialDate!.day);
+    // assert(
+    //   () {
+    //     if (initialDate == null) return true;
+    //     final init = DateTime(initialDate!.year, initialDate!.month, initialDate!.day);
 
-        final min = DateTime(minDate.year, minDate.month, minDate.day);
+    //     final min = DateTime(minDate.year, minDate.month, minDate.day);
 
-        return init.isAfter(min) || init.isAtSameMomentAs(min);
-      }(),
-      'initialDate $initialDate must be on or after minDate $minDate.',
-    );
+    //     return init.isAfter(min) || init.isAtSameMomentAs(min);
+    //   }(),
+    //   'initialDate $initialDate must be on or after minDate $minDate.',
+    // );
     assert(
       () {
         if (initialDate == null) return true;
@@ -357,7 +357,8 @@ class _DaysPickerState extends State<DaysPicker> {
 
     //
     //! splash
-    final splashColor = widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
+    final splashColor =
+        widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
 
     final highlightColor = widget.highlightColor ?? Theme.of(context).highlightColor;
     //

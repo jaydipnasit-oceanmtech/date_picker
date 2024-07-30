@@ -38,13 +38,13 @@ class MyApp extends StatelessWidget {
                           // disabledCellsDecoration:
                           //     const BoxDecoration(color: Colors.deepPurpleAccent, shape: BoxShape.circle),
                           // enabledCellsDecoration: const BoxDecoration(color: Colors.blueAccent, shape: BoxShape.circle),
-                          enabledCellsTextStyle: TextStyle(),
-                          disabledCellsTextStyle: TextStyle(),
+                          enabledCellsTextStyle: const TextStyle(),
+                          disabledCellsTextStyle: const TextStyle(),
                           splashColor: Colors.transparent,
                           padding: const EdgeInsets.symmetric(horizontal: 12),
                           context: context,
                           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-                          minDate: DateTime(2020, 10, 10),
+                          minDate: DateTime(2003, 05, 10),
                           maxDate: DateTime(2024, 10, 30),
                           centerLeadingDate: true,
                         );
@@ -60,8 +60,8 @@ class MyApp extends StatelessWidget {
                           // disabledCellsDecoration:
                           //     const BoxDecoration(color: Colors.deepPurpleAccent, shape: BoxShape.circle),
                           // enabledCellsDecoration: const BoxDecoration(color: Colors.blueAccent, shape: BoxShape.circle),
-                          enabledCellsTextStyle: TextStyle(),
-                          disabledCellsTextStyle: TextStyle(),
+                          enabledCellsTextStyle: const TextStyle(),
+                          disabledCellsTextStyle: const TextStyle(),
                           splashColor: Colors.transparent,
                           padding: const EdgeInsets.symmetric(horizontal: 12),
                           context: context,

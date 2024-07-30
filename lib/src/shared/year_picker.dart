@@ -67,17 +67,17 @@ class YearsPicker extends StatefulWidget {
   }) {
     assert(!minDate.isAfter(maxDate), "minDate can't be after maxDate");
 
-    assert(
-      () {
-        if (initialDate == null) return true;
-        final init = DateUtilsX.yearOnly(initialDate!);
+    // assert(
+    //   () {
+    //     if (initialDate == null) return true;
+    //     final init = DateUtilsX.yearOnly(initialDate!);
 
-        final min = DateUtilsX.yearOnly(minDate);
+    //     final min = DateUtilsX.yearOnly(minDate);
 
-        return init.isAfter(min) || init.isAtSameMomentAs(min);
-      }(),
-      'initialDate $initialDate must be on or after minDate $minDate.',
-    );
+    //     return init.isAfter(min) || init.isAtSameMomentAs(min);
+    //   }(),
+    //   'initialDate $initialDate must be on or after minDate $minDate.',
+    // );
     assert(
       () {
         if (initialDate == null) return true;
@@ -360,7 +360,8 @@ class _YearsPickerState extends State<YearsPicker> {
 
     //
     //! splash
-    final splashColor = widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
+    final splashColor =
+        widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
 
     final highlightColor = widget.highlightColor ?? Theme.of(context).highlightColor;
     //
@@ -409,7 +410,9 @@ class _YearsPickerState extends State<YearsPicker> {
 
               return YearView(
                 key: ValueKey<DateTimeRange>(yearRange),
-                currentDate: widget.currentDate != null ? DateUtilsX.yearOnly(widget.currentDate!) : DateUtilsX.yearOnly(DateTime.now()),
+                currentDate: widget.currentDate != null
+                    ? DateUtilsX.yearOnly(widget.currentDate!)
+                    : DateUtilsX.yearOnly(DateTime.now()),
                 maxDate: DateUtilsX.yearOnly(widget.maxDate),
                 minDate: DateUtilsX.yearOnly(widget.minDate),
                 displayedYearRange: yearRange,

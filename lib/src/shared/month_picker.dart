@@ -67,17 +67,17 @@ class MonthPicker extends StatefulWidget {
   }) {
     assert(!minDate.isAfter(maxDate), "minDate can't be after maxDate");
 
-    assert(
-      () {
-        if (initialDate == null) return true;
-        final init = DateUtilsX.monthOnly(initialDate!);
+    // assert(
+    //   () {
+    //     if (initialDate == null) return true;
+    //     final init = DateUtilsX.monthOnly(initialDate!);
 
-        final min = DateUtilsX.monthOnly(minDate);
+    //     final min = DateUtilsX.monthOnly(minDate);
 
-        return init.isAfter(min) || init.isAtSameMomentAs(min);
-      }(),
-      'initialDate $initialDate must be on or after minDate $minDate.',
-    );
+    //     return init.isAfter(min) || init.isAtSameMomentAs(min);
+    //   }(),
+    //   'initialDate $initialDate must be on or after minDate $minDate.',
+    // );
     assert(
       () {
         if (initialDate == null) return true;
@@ -339,7 +339,8 @@ class _MonthPickerState extends State<MonthPicker> {
 
     //
     //! splash
-    final splashColor = widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
+    final splashColor =
+        widget.splashColor ?? selectedCellDecoration.color?.withOpacity(0.3) ?? colorScheme.primary.withOpacity(0.3);
 
     final highlightColor = widget.highlightColor ?? Theme.of(context).highlightColor;
     //
@@ -398,7 +399,9 @@ class _MonthPickerState extends State<MonthPicker> {
 
               return MonthView(
                 key: ValueKey<DateTime>(year),
-                currentDate: widget.currentDate != null ? DateUtilsX.monthOnly(widget.currentDate!) : DateUtilsX.monthOnly(DateTime.now()),
+                currentDate: widget.currentDate != null
+                    ? DateUtilsX.monthOnly(widget.currentDate!)
+                    : DateUtilsX.monthOnly(DateTime.now()),
                 maxDate: DateUtilsX.monthOnly(widget.maxDate),
                 minDate: DateUtilsX.monthOnly(widget.minDate),
                 displayedDate: year,
